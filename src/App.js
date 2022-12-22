@@ -7,6 +7,7 @@ import Users from './hooks/Users';
 import React, { Component } from 'react'
 import MoviePage from './context/MoviePage';
 import UserContext from './context/userContext';
+import CartContext from './context/cartContext';
 import Login from './context/Login';
 
 
@@ -26,10 +27,12 @@ class App extends Component {
         <Counter1/>
         <Counter2/>
         <Users/>
+        <CartContext.Provider value={{cart: []}}>
         <UserContext.Provider value={{currentUser: this.state.currentUser, onLoggedIn: this.handleLoggedIn}}>
         <MoviePage/>
         <Login/>
         </UserContext.Provider>
+        </CartContext.Provider>
         
       </Fragment>
       
