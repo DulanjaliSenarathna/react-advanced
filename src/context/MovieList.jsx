@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MovieRow from './MovieRow';
 import UserContext from './userContext';
 
 class MovieList extends Component {
@@ -11,7 +12,11 @@ class MovieList extends Component {
     render() {
         return (
             <UserContext.Consumer>
-                {UserContext =>  <div>Movie List{UserContext.name}</div>}
+                {UserContext =>  
+                <div>
+                    Movie List{UserContext.name}
+                    <MovieRow/>
+                </div>}
                 
             </UserContext.Consumer>
            
